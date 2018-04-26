@@ -18,6 +18,7 @@ import AuthenticatedComponent from './components/AuthenticatedComponent'
 import NoteDetail from './components/NoteDetail';
 import NoteEdit from './components/NoteEdit';
 import Scheduling from './components/Scheduling';
+import Physician from './components/Physician';
 import './styles/index.css';
 
 //create redux store -> reducers -> actions - actionsType | applyMiddleware()
@@ -37,6 +38,7 @@ ReactDOM.render(
                             <Header />
                             <Route path="/:id/edit" component={NoteEdit} exact={true} />
                             <Route path="/scheduling" component={Scheduling} exact={true} />
+                            <Route path="/physician" component={Physician} exact={true} />
                             <Route path="/noteDetail/:id" component={NoteDetail} exact={true} />
                             <Route path="/" component={App} exact={true}/>
                         </AuthenticatedComponent>

@@ -22,11 +22,32 @@ class Header extends Component {
       render() {
         return (
           <div>
-            <Navbar color="faded" light expand="true">
+            <Navbar color="faded" light expand="md">
               <NavbarBrand href="/" className="sidebar-header">Doctor Schedule</NavbarBrand>
-              <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-              <Collapse isOpen={!this.state.collapsed} navbar>
-                <Nav navbar>
+                <Nav className="ml-auto" navbar>
+                    <NavItem>
+                        
+                    </NavItem>
+                    <NavItem>
+                        <NavLink>
+                            Quem somos
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink>
+                            Conheça o App
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink>
+                            Acesso ao sistema
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="/physician">
+                            <i>Physician</i>
+                        </NavLink>
+                    </NavItem>
                     <NavItem>
                     {
                         this.props.user === null ? (
@@ -39,14 +60,8 @@ class Header extends Component {
                             </NavLink>
                             )
                     }                                                       
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/scheduling">
-                            <i>Scheduling</i>
-                        </NavLink>
-                    </NavItem>
-                </Nav>
-              </Collapse>
+                    </NavItem>    
+                </Nav>              
             </Navbar>
           </div>
         );

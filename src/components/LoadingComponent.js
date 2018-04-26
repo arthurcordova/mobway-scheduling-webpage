@@ -5,11 +5,12 @@ import { withRouter } from 'react-router-dom';
 import { getUser } from '../actions/userActions';
 import { getNotes } from '../actions/notesAction';
 import { getSchedulings } from '../actions/schedulingsAction';
+import { getPhysicians } from '../actions/physiciansAction';
 import Loading from './Loading';
 
 class LoadingComponent extends Component {
     componentWillMount() {
-        const { userLoading, notesLoading, schedulingsLoading } = this.props;
+        const { userLoading, notesLoading, schedulingsLoading, physiciansLoading} = this.props;
         // if we tried to load the user, load user
         if (userLoading === undefined) {
             this.props.getUser();
@@ -19,10 +20,15 @@ class LoadingComponent extends Component {
         if (notesLoading === undefined) {
             this.props.getNotes()
         }
-        console.log('schedulingsLoading ' + this.props.getSchedulings());
+
         if (schedulingsLoading === undefined) {
             this.props.getSchedulings();
         }
+
+        if (physiciansLoading === undefined) {
+            this.props.getPhysicians();
+        }
+        
     }
 
     componentWillReceiveProps(nextProps) {
@@ -48,8 +54,9 @@ function mapStateToProps(state) {
         user: state.user,
         userLoading: state.loading.user,
         notesLoading: state.loading.notes,
-        schedulingsLoading: state.loading.schedulings
+        schedulingsLoading: state.loading.schedulings,
+        physiciansLoading: state.loading.physicians
     };
 }
 
-export default withRouter(connect(mapStateToProps, { getUser, getNotes, getSchedulings })(LoadingComponent));
+export default withRouter(connect(mapStateToProps, { getUser, getNotes, getSchedulings, getPhysicians })(LoadingComponent));

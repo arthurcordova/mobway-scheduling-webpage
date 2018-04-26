@@ -11,7 +11,7 @@ export function getSchedulings() {
         database.ref('scheduling').on('value', snapshot => {            
             dispatch({
                 type: GET_SCHEDULINGS,
-                payload: snapshot.val()                
+                payload: snapshot.val()
             });
             //once schedulings are receiver show loading to false
             dispatch({

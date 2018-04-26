@@ -46,8 +46,6 @@ class App extends Component {
   }
 
   renderNotes() {
-    console.log(this.props.scheduling);
-    console.log(this.props.schedulings);
     return _.map(this.props.notes, (note, key) => {
       return (
         <NoteCard key={key}>
@@ -127,7 +125,7 @@ function mapStateToProps(state, ownProps) {
     notes: state.notes,
     user: state.user,
     scheduling: state.scheduling,
-    schedulings: state.schedulings
+    schedulings: state.schedulings        
   }
 }
 

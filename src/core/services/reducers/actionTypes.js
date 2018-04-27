@@ -1,0 +1,4 @@
+export const GET_USER = 'GET_USER';
+export const USER_STATUS = 'USER_STATUS';
+export const GET_PHYSICIANS = 'GET_PHYSICIANS';
+export const PHYSICIANS_STATUS = 'PHYSICIANS_STATUS';

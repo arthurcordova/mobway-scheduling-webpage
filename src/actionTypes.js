@@ -1,8 +1,0 @@
-export const GET_NOTES = 'GET_NOTES';
-export const GET_USER = 'GET_USER';
-export const USER_STATUS = 'USER_STATUS';
-export const NOTES_STATUS = 'NOTES_STATUS';
-export const GET_SCHEDULINGS = 'GET_SCHEDULINGS';
-export const SCHEDULINGS_STATUS = 'SCHEDULINGS_STATUS';
-export const GET_PHYSICIANS = 'GET_PHYSICIANS';
-export const PHYSICIANS_STATUS = 'PHYSICIANS_STATUS';

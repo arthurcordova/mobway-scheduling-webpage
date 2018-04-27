@@ -2,24 +2,21 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from './core/components/App';
 import registerServiceWorker from './registerServiceWorker';
 //redux
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from './reducers';//index.js
+import rootReducer from './core/services/reducers';//index.js
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import Login from './components/Login';
-import Header from './routes/Header';
-import LoadingComponent from './components/LoadingComponent';
-import AuthenticatedComponent from './components/AuthenticatedComponent'
-import NoteDetail from './components/NoteDetail';
-import NoteEdit from './components/NoteEdit';
-import Scheduling from './components/Scheduling';
-import Physician from './components/Physician';
-import './styles/index.css';
+import Login from './core/components/Login';
+import Header from './core/components/Header';
+import LoadingComponent from './core/components/LoadingComponent';
+import AuthenticatedComponent from './core/components/AuthenticatedComponent'
+import Physician from './core/components/Physician';
+import './assets/styles/index.css';
 
 //create redux store -> reducers -> actions - actionsType | applyMiddleware()
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
@@ -35,11 +32,8 @@ ReactDOM.render(
                         <Route path="/Login" component={Login} exact={true}/>
                         <Redirect from="/logout" to="/login" />
                         <AuthenticatedComponent>
-                            <Header />
-                            <Route path="/:id/edit" component={NoteEdit} exact={true} />
-                            <Route path="/scheduling" component={Scheduling} exact={true} />
-                            <Route path="/physician" component={Physician} exact={true} />
-                            <Route path="/noteDetail/:id" component={NoteDetail} exact={true} />
+                            <Header />                                                        
+                            <Route path="/physician" component={Physician} exact={true} />                            
                             <Route path="/" component={App} exact={true}/>
                         </AuthenticatedComponent>
                     </Switch>

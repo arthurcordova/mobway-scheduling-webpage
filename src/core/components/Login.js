@@ -4,8 +4,7 @@ import { googleLogin, twitterLogin } from '../services/actions/userActions';
 
 class Login extends Component {
     componentWillMount() {
-        if (this.props.user !== null) {
-            //console.log(this.props.history);
+        if (this.props.user !== null) {            
             this.props.history.push('/');
         }
     }

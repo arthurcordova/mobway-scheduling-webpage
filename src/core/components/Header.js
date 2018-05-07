@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUser, logout } from '../services/actions/userActions';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import logo from '../../assets/img/logo-agendai.png';
+
 
 class Header extends Component {
     constructor(props) {
@@ -22,47 +22,22 @@ class Header extends Component {
       render() {
         return (
           <div>
-            <Navbar color="faded" light expand="md">
-              <NavbarBrand href="/" className="sidebar-header">Doctor Schedule</NavbarBrand>
-                <Nav className="ml-auto" navbar>
-                    <NavItem>
-                        
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                            Quem somos
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                            Conheça o App
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                            Acesso ao sistema
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/physician">
-                            <i>Physician</i>
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                    {
-                        this.props.user === null ? (
-                            <NavLink href="/Login">
-                                <i className="glyphicon glyphicon-briefcase">login</i>
-                            </NavLink>                            
-                        ) : (
-                            <NavLink href="/logout" onClick={() => this.props.logout()}>
-                                <i className="glyphicon glyphicon-briefcase">Logout</i>
-                            </NavLink>
-                            )
-                    }                                                       
-                    </NavItem>    
-                </Nav>              
-            </Navbar>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light flex">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse flex-class" id="navbarTogglerDemo01">
+                <a href="/">
+                <img src={logo} className="img-fluid" href="/" />
+                </a>
+                <a className="nav-link nav-button headerText" href="/">Quem Somos
+                    <span className="sr-only">(current)</span>
+                </a>
+                <a className="nav-link nav-button headerText" href="/">Conheça o App</a>
+                <a className="nav-link nav-button headerText" href="/Physician">Acesso ao Sistema</a>
+                </div>
+            </nav>
           </div>
         );
       }

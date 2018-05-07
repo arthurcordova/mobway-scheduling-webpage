@@ -8,8 +8,7 @@ export function getPhysicians() {
                 type: PHYSICIANS_STATUS,
                 payload : true
         });
-        database.ref('physicians').on('value', snapshot => {   
-            console.log("MANUCA");         
+        database.ref('physicians').on('value', snapshot => {               
             dispatch({
                 type: GET_PHYSICIANS,
                 payload: snapshot.val()                

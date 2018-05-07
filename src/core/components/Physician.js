@@ -36,8 +36,7 @@ class Physician extends Component {
     }        
 }
 
-function mapStateToProps(state, ownProps) {
-    //console.log(state.physicians);
+function mapStateToProps(state, ownProps) {    
     return {        
         physicians : state.physicians
     }

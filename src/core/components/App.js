@@ -21,7 +21,7 @@ class App extends Component {
     
     return (
       <div className="container-fluid">
-        <div className="row">
+        <div className="row justify-content-center">
           <div className="col-sm-2 text-center">
             <img
               src={this.props.user.photoURL}
@@ -29,42 +29,12 @@ class App extends Component {
               className="img img-responsive circle"
               style={{padding: '20px' }}              
             />
-            <h4 className="username">Welcome back {this.props.user.displayName}</h4>                     
+            <h4 className="username">Welcome back {this.props.user.displayName}</h4>
             <a className="nav-link nav-button headerText" href="/" onClick={() => this.props.logout()}>
-              <i className="glyphicon glyphicon-briefcase">logout</i>
+              <i className="glyphicon glyphicon-briefcase text-right">logout</i>
             </a>
-          </div>            
-          <div className="col-sm-10">
-            <form onSubmit={this.handleSubmit}>
-              <div className="form-group">
-                <input 
-                  onChange={this.handleChange} 
-                  value={this.state.title}
-                  type="text" 
-                  name="title" 
-                  className="form-control no-border" 
-                  placeholder="Title..." 
-                  required />
-              </div>
-              <div className="form-group">
-                <textarea 
-                  onChange={this.handleChange} 
-                  value={this.state.body}
-                  type="text"
-                  name="body" 
-                  className="form-control no-border" 
-                  placeholder="Body..." 
-                  required />
-              </div>
-              <div className="form-group">
-              	<button className="btn btn-primary col-sm-12" >Save</button>
-              </div>
-            </form>
-            <br />
-            <br />
-            <br />            
-          </div>
-        </div>
+          </div>          
+        </div>        
       </div>
     );
   }

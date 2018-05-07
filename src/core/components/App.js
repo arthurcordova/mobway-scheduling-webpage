@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import {connect} from 'react-redux';
-import {getUser} from '../services/actions/userActions';
-import { Link } from 'react-router-dom'
+import {getUser, logout} from '../services/actions/userActions';
+import { Link, NavLink } from 'react-router-dom'
 
 class App extends Component {
 
@@ -29,8 +29,11 @@ class App extends Component {
               className="img img-responsive circle"
               style={{padding: '20px' }}              
             />
-            <h4 className="username">Welcome back {this.props.user.displayName}</h4>
-          </div>          
+            <h4 className="username">Welcome back {this.props.user.displayName}</h4>                     
+            <a className="nav-link nav-button headerText" href="/" onClick={() => this.props.logout()}>
+              <i className="glyphicon glyphicon-briefcase">logout</i>
+            </a>
+          </div>            
           <div className="col-sm-10">
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
@@ -73,4 +76,4 @@ function mapStateToProps(state, ownProps) {
   }
 }
 
-export default connect(mapStateToProps, {getUser}) (App);  
+export default connect(mapStateToProps, {getUser, logout}) (App);  

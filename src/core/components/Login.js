@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { googleLogin, twitterLogin } from '../services/actions/userActions';
+import logo from '../../assets/img/logo-agendai.png';
 
 class Login extends Component {
     componentWillMount() {
@@ -16,20 +17,27 @@ class Login extends Component {
     }
 
     render() {
-        return (
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-sm-12 jumbotron" style={{ marginTop: '-20px' }}>
-                        <h1> Doctor Schedule</h1>
-                        <h2><i>Login whith your favorite <b>Social Network</b></i></h2>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-sm-12">                        
-                        <button className="btn btn-danger col-sm-12" onClick={this.props.googleLogin}>
-                                Login with Google
-                        </button>                    
-                    </div>
+        return (            
+            <div className="container">
+                <div class="col-md-6 ">
+                    <img src={logo} className="img-login" href="/" />
+                    <form className="login">
+                        <div className="input-group">                            
+                                <i class="material-icons orange600">account_circle</i>
+                                <input id="login-email" type="text" name="email" placeholder="email" />                            
+                        </div>
+                        <div className="input-group">                        
+                            <i class="material-icons orange600">lock</i>
+                            <input id="password" type="password" placeholder="password" />
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12">                        
+                                <button className="btn btn-danger col-sm-12" onClick={this.props.googleLogin}>
+                                    Login with Google
+                                </button>                    
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>            
         )

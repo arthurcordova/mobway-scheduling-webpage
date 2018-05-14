@@ -17,6 +17,8 @@ import LoadingComponent from './core/components/LoadingComponent';
 import AuthenticatedComponent from './core/components/AuthenticatedComponent'
 import Physician from './core/components/Physician';
 import './assets/styles/index.css';
+import 'material-design-icons/iconfont/material-icons.css';
+
 
 //create redux store -> reducers -> actions - actionsType | applyMiddleware()
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

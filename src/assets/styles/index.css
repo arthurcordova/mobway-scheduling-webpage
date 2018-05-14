@@ -1,3 +1,7 @@
+body {
+  background-color: #ececec;
+}
+
 .headerText {
   /**color: #ffffff;**/
   width: 168px;
@@ -19,6 +23,7 @@
     justify-content: space-between;
     align-items: stretch;
     align-content: center;
+    background-color: #ececec;
     /*opacity: 0.11;
     background-color: #404040;    */
   }
@@ -28,13 +33,6 @@
 
 * {
   border-radius: 0px !important;
-}
-
-.jumbotron {
-  border-radius: 0px !important;
-  background-color: #092b40;
-  color: #fff;
-  font-family: 'Bowlby One', cursive;
 }
 
 .no-border {
@@ -59,4 +57,33 @@
   .username {
       text-align: left;
   }
+} 
+
+.material-icons.orange600 { color: #fa496e; }
+
+form.login input[type="text"], form.login input[type="password"]
+{
+    width: 90%;
+    margin: 0;
+    padding: 5px 10px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid #404040;
+    outline: 0;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #fa496e;
+    outline: 0;
+}
+
+.img-login {
+    padding: 90px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }

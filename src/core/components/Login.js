@@ -19,7 +19,7 @@ class Login extends Component {
     render() {
         return (            
             <div className="container">
-                <div class="col-md-6 ">
+                <div class="col-md-12">
                     <img src={logo} className="img-login" href="/" />
                     <form className="login">
                         <div className="input-group">                            

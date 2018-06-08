@@ -19,15 +19,15 @@ class Login extends Component {
     render() {
         return (            
             <div className="container">
-                <div class="col-md-12">
+                <div className="col-md-12">
                     <img src={logo} className="img-login" href="/" />
                     <form className="login">
                         <div className="input-group">                            
-                                <i class="material-icons orange600">account_circle</i>
+                                <i className="material-icons orange600">account_circle</i>
                                 <input id="login-email" type="text" name="email" placeholder="email" />                            
                         </div>
                         <div className="input-group">                        
-                            <i class="material-icons orange600">lock</i>
+                            <i className="material-icons orange600">lock</i>
                             <input id="password" type="password" placeholder="password" />
                         </div>
                         <div className="row">

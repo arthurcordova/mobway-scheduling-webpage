@@ -32,7 +32,7 @@ class Login extends Component {
                         </div>
                         <div className="row">
                             <div className="col-sm-12">                        
-                                <button className="btn btn-danger col-sm-12" onClick={this.props.googleLogin}>
+                                <button type="button" className="btn btn-danger col-sm-12" onClick={this.props.googleLogin}>
                                     Login with Google
                                 </button>                    
                             </div>

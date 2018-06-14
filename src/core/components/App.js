@@ -13,7 +13,7 @@ class App extends Component {
       title: '',
       body: ''
     };
-    //bind            
+    //bind                
   }
 
 
@@ -28,8 +28,9 @@ class App extends Component {
               height="100pc"
               className="img img-responsive circle"
               style={{padding: '20px' }}              
-            />
+            />            
             <h4 className="username">Welcome back {this.props.user.displayName}</h4>
+            <h1>{this.props.user.email}</h1>
             <a className="nav-link nav-button headerText" href="/" onClick={() => this.props.logout()}>
               <i className="glyphicon glyphicon-briefcase text-right">logout</i>
             </a>

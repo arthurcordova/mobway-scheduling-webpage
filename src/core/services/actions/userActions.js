@@ -1,15 +1,14 @@
-import {auth, googleProvider, twitterProvider} from '../../../firebase';
+import {auth, googleProvider} from '../../../firebase';
 import {GET_USER, USER_STATUS} from '../reducers/actionTypes';
 
 export function getUser() {    
-    return dispatch => {   
-        var varAuth = auth;     
+    return dispatch => {                
         //Show loading status before getting user to true
         dispatch({
             type: USER_STATUS,
             payload : true
         });
-        varAuth.onAuthStateChanged(user => {
+        auth.onAuthStateChanged(user => {
             dispatch({
                 type: GET_USER,
                 payload: user
@@ -23,17 +22,15 @@ export function getUser() {
     };
 }
 
-export function googleLogin() {    
-    var varAuth = auth;
-    var varGoogleProvider = googleProvider;    
-    return dispatch =>  varAuth.signInWithPopup(varGoogleProvider);
+export function googleLogin() {        
+    return dispatch =>  auth.signInWithPopup(googleProvider);
 }
 
-export function twitterLogin() {
-    return dispatch => auth.signInWithPopup(twitterProvider);
+export function emailLogin(email, password) {
+    console.log(email, password);
+    return dispatch => auth.createUserWithEmailAndPassword(email, password);
 }
 
-export function logout() {
-    var varAuth = auth;
-    return dispatch => varAuth.signOut();
+export function logout() {    
+    return dispatch => auth.signOut();
 }

@@ -51,21 +51,27 @@ class Login extends Component {
                     <img src={logo} className="img-login" href="/" />
                     <form className="login">
                         <div className="input-group">                            
-                                <i className="material-icons orange600">account_circle</i>
+                                <i className="material-icons pink600">account_circle</i>
                                 <input id="login-email" type="text" name="email" placeholder="email" onChange={this.handleChange} value={this.state.email} />                            
                         </div>
                         <div className="input-group">                        
-                            <i className="material-icons orange600">lock</i>
+                            <i className="material-icons pink600">lock</i>
                             <input id="password" name="password" type="password" placeholder="password" onChange={this.handleChange} value={this.state.password} />
                         </div>                        
-                        <div className="row">
+                        <div className="row div-login">
                             <div className="col-sm-12">
-                                <button type="button" className="btn btn-danger col-sm-3" onClick={this.props.googleLogin}>
-                                    Login with Google
-                                </button>                    
-                                <button type="button" className="btn btn-google col-sm-9" onClick={this.handleSubmit}>
-                                    Login with E-mail
-                                </button>                    
+                                <div>
+                                    <span className="col-sm-4 btn-login" onClick={this.handleSubmit}>
+                                        Entrar
+                                    </span>
+                                </div>
+                                <div id="gSignInWrapper">
+                                    <span class="label">Sign in with:</span>
+                                    <div id="customBtn" className="customGPlusSignIn">
+                                        <span className="icon"></span>
+                                        <span className="buttonText" onClick={this.props.googleLogin}>Google</span>
+                                    </div>  
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -73,16 +79,6 @@ class Login extends Component {
             </div>            
         )
     }
-}
-
-function renderButton() {
-    return () => ('my-signin2', {
-      'scope': 'profile email',
-      'width': 240,
-      'height': 50,
-      'longtitle': true,
-      'theme': 'dark'
-    });
 }
 
 function mapStateToProps(state, ownProps) {

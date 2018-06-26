@@ -57,24 +57,30 @@ class Login extends Component {
                         <div className="input-group">                        
                             <i className="material-icons pink600">lock</i>
                             <input id="password" name="password" type="password" placeholder="password" onChange={this.handleChange} value={this.state.password} />
-                        </div>                        
-                        <div className="row div-login">
-                            <div className="col-sm-12">
-                                <div>
-                                    <span className="col-sm-4 btn-login" onClick={this.handleSubmit}>
-                                        Entrar
-                                    </span>
-                                </div>
-                                <div id="gSignInWrapper">
-                                    <span class="label">Sign in with:</span>
-                                    <div id="customBtn" className="customGPlusSignIn">
-                                        <span className="icon"></span>
-                                        <span className="buttonText" onClick={this.props.googleLogin}>Google</span>
-                                    </div>  
-                                </div>
-                            </div>
-                        </div>
+                        </div>  
+                        <div className="row div-login col-sm-12">
+                            <span id="btn-login" className="buttonText" onClick={this.handleSubmit}>
+                                Entrar
+                            </span>
+                        </div>                                              
                     </form>
+
+                    <div className="div-login col-sm-12">
+                        <span className="forgetPass">Esqueceu sua senha? <a href="">Clique aqui</a></span>
+                    </div>
+
+                    <div className="or-box">
+                        <span className="or">ou</span>
+                    </div>
+
+                    <div className="div-login col-sm-12">
+                        <div id="gSignInWrapper">                                
+                            <div id="customBtn" className="customGPlusSignIn">
+                                <span className="icon"></span>
+                                <span className="buttonText" onClick={this.props.googleLogin}>Sign in with Google</span>
+                            </div>  
+                        </div>                        
+                    </div>
                 </div>
             </div>            
         )

@@ -87,52 +87,16 @@ form.login input[type="text"], form.login input[type="password"]
     /*-webkit-border-radius: 50%;
     border-radius: 50%;*/
 }
-
-#customBtn {
-      display: inline-block;
-      background: white;
-      color: #444;
-      width: 190px;
-      border-radius: 5px;
-      border: thin solid #888;
-      box-shadow: 1px 1px 1px grey;
-      white-space: nowrap;
-    }
-    #customBtn:hover {
-      cursor: pointer;
-    }
-    span.label {
-      font-family: serif;
-      font-weight: normal;
-    }
-    span.icon {
-      background: url('/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
-      display: inline-block;
-      vertical-align: middle;
-      width: 42px;
-      height: 42px;
-    }
-    span.buttonText {
-      display: inline-block;
-      vertical-align: middle;
-      padding-left: 42px;
-      padding-right: 42px;
-      font-size: 14px;
-      font-weight: bold;
-      /* Use the Roboto font that is loaded in the <head> */
-      font-family: 'Roboto', sans-serif;
-    }
-
-    /*MANUCA*/
     #customBtn {
       display: inline-block;
       background: white;
       color: #444;
-      width: 190px;
+      width: 250px;
       border-radius: 5px;
       border: thin solid #888;
       box-shadow: 1px 1px 1px grey;
       white-space: nowrap;
+      border-radius: 25.5px;
     }
     #customBtn:hover {
       cursor: pointer;
@@ -161,12 +125,44 @@ form.login input[type="text"], form.login input[type="password"]
 
     .div-login{
       text-align: center;
+      display: inline-block;
+      padding: 25px;
     }
 
-    .btn-login {
-      width: 270px;
-      height: 40px;
+    #btn-login {
+      width: 60%;
+      height: 30px;
       border-radius: 25.5px;
       background-color: #fa496e;
-      color: #ececec;      
+      color: #ececec;
+      font-size: 18px;
     }
+
+    #forgetPass {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+    }
+
+    .or-box {
+      position: relative;
+      border-top: 1px solid #d8d8d8;
+      padding-top: 20px;
+      margin-top:20px;
+  }
+  .or {      
+      background-color: #ececec;
+      position: absolute;
+      text-align: center;
+      top: -8px;
+      width: 40px;
+      left: 50%;
+      font-family: AmpleSoft;
+      font-size: 14px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #fa496e;
+  }
